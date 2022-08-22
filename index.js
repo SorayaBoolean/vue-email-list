@@ -1,7 +1,7 @@
 var app = new Vue ({
     el: '#app',
     data: {
-        generatedEmail : ''
+        generatedEmail : [ ]
     },
     mounted () {
         for (let i = 0; i < 10 ; i ++) {
@@ -9,8 +9,8 @@ var app = new Vue ({
             axios.get ('https://flynn.boolean.careers/exercises/api/random/mail')
             .then( response => {
         
-                this.generatedEmail += response.data.response 
-                console.log (response.data.response)
+                this.generatedEmail.push(response.data.response) ;
+
         })
         }
         
